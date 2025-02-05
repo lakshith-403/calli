@@ -8,23 +8,26 @@ import SettlementView from "./components/SettlementView"
 import ExportSection from "./components/ExportSection"
 
 export default function Home() {
-  const [activeProject, setActiveProject] = useState(null)
-  const [people, setPeople] = useState([])
-  const [transactions, setTransactions] = useState([])
+    const [activeProject, setActiveProject] = useState(null)
+    const [people, setPeople] = useState([])
+    const [transactions, setTransactions] = useState([])
 
-  return (
-    <div className="space-y-8 dark:bg-gray-900 dark:text-white">
-      {!activeProject ? (
-        <ProjectSetup setActiveProject={setActiveProject} />
-      ) : (
-        <>
-          <PeopleManagement people={people} setPeople={setPeople} />
-          <TransactionsSection people={people} transactions={transactions} setTransactions={setTransactions} />
-          <SettlementView people={people} transactions={transactions} />
-          <ExportSection project={activeProject} people={people} transactions={transactions} />
-        </>
-      )}
-    </div>
-  )
+    return (
+        <div className="space-y-8 dark:bg-gray-900 dark:text-white">
+            <>
+                <PeopleManagement people={people} setPeople={setPeople} />
+                <TransactionsSection
+                    people={people}
+                    transactions={transactions}
+                    setTransactions={setTransactions}
+                />
+                <SettlementView people={people} transactions={transactions} />
+                <ExportSection
+                    project={activeProject}
+                    people={people}
+                    transactions={transactions}
+                />
+            </>
+        </div>
+    )
 }
-
