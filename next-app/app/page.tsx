@@ -22,11 +22,6 @@ export default function Home() {
                     setTransactions={setTransactions}
                 />
                 <SettlementView people={people} transactions={transactions} />
-                <ExportSection
-                    project={activeProject}
-                    people={people}
-                    transactions={transactions}
-                />
             </>
         </div>
     )
